@@ -1,0 +1,154 @@
+body{
+    background-color: $darkBlue;
+}
+.container{
+    height: 100vh;
+    width: 30rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: $desaturedBlue;
+            padding: 3rem 2rem 1rem 2rem;
+            border-radius: 0rem 0rem 1rem 1rem;
+    
+            .title{
+                font-size: 3.4rem;
+                font-family: $inter;
+                font-weight: $bold;
+                color: $white;
+                //margin-top: 4rem;
+                margin-bottom: 2rem;
+                span {
+                    color: $violet;
+                }
+            }
+    
+            .parrafo{
+                width: 80%;
+                font-size: 1.4rem;
+                font-family: $inter;
+                font-weight: $regular;
+                line-height: 1.8;
+                color: $t1white;
+                margin-bottom: 4.5rem;
+            }
+        }
+    
+        .container-img{
+            position: relative;
+            grid-row: 1/2;
+            .overlay{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $violetOverlay;
+                border-radius: 1rem 1rem 0rem 0rem;
+            }
+            .img{
+                width: 34rem;
+                //width: 100%;
+                height: 100%;                
+                background-image: url(../../../src/img/image-header-mobile.jpg);
+                background-size: cover;
+                border-radius: 1rem 1rem 0rem 0rem;
+            }
+        }
+    }
+
+}
+
+.stats{
+    .stat{
+        margin-bottom: 3.5rem;
+    }
+    .cantidad{
+        font-size: 2rem;
+        color: $white;
+        font-family: $inter;
+        font-weight: $bold;
+    }
+    .tipo{
+        font-size: 1.1rem;
+        color: $t2white;
+        font-family: $lexend;
+        text-transform: uppercase;
+    }
+}
+
+
+
+//DESKTOP!!!!!
+
+@include desktop{
+    
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        .info{
+            display: block;
+            padding: 7rem 9rem 7rem 7rem;
+            width: 52rem;
+            border-radius: 1rem 0 0 1rem;
+            
+            h1, p {
+                text-align: left;
+                margin: 0;
+            }
+
+            .title{
+                margin-top: 0;
+                margin-bottom: 3rem;
+            }
+            .parrafo{
+                width: 90%;
+                margin-bottom: 7rem;
+            }
+        }
+        .container-img{
+            grid-column: 2/3;
+            .overlay{
+                border-radius: 0rem 1rem 1rem 0rem;
+            }
+            .img{
+                width: 52rem;
+                height: 44rem;
+                background-image: url(../../../src/img/image-header-desktop.jpg);
+                border-radius: 0rem 1rem 1rem 0rem;
+            }
+        }
+
+    }
+}
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .stat{
+        margin-bottom: 0;
+        margin-right: 7rem;
+    }
+
+    .cantidad{
+        margin-bottom: .5rem;
+    }
+    .tipo{
+
+    }
+}
+}
